@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frame Compare</title>
+<meta name="theme-color" content="#0a0c12">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Frame Compare">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript>Bitte JavaScript aktivieren.</noscript>
+<div id="app">
+  <div class="bar"><span class="logo"></span><b>Frame Compare</b><button class="sp chip" id="bgal">🗂 Galerie</button></div>
+  <div id="stages"></div>
+  <div id="dock">
+    <div class="panel" id="pset"></div>
+    <div class="panel" id="ptool">
+      <div class="r"><button class="chip on" id="mdraw">✎ Zeichnen</button><button class="chip" id="mmove">✥ Verschieben</button><button class="chip pri" id="cpy" style="margin-left:auto">Kopieren ⇄</button></div>
+      <div class="r"><button class="chip on" id="kl">Linie</button><button class="chip" id="ka">Winkel (3 Punkte)</button><div class="sw" id="sw"></div></div>
+      <div id="stats"></div>
+      <div class="pad"><span class="mu">Fein</span><button data-n="-1,0">←</button><button data-n="1,0">→</button><button data-n="0,-1">↑</button><button data-n="0,1">↓</button><button data-r="-1">⟲</button><button data-r="1">⟳</button><button id="del" class="dg" style="margin-left:auto">Löschen</button><button id="delall" class="dg">Alle</button></div>
+      <div class="mu" id="hint"></div>
+    </div>
+    <div class="r"><input type="range" id="gs" min="0" max="0" value="0"><span id="gc" class="mu">0/0</span></div>
+    <div id="btns"><button id="bset">⚙</button><button id="btool">✎</button><button id="prev">◀</button><button id="play">▶</button><button id="next">▶|</button></div>
+  </div>
+</div>
+<div id="gal">
+  <div class="bar"><button id="gback">‹ Zurück</button><b>Galerie</b><label class="chip pri sp">+ Videos<input type="file" id="gadd" accept="video/*" multiple></label></div>
+  <div id="chips"></div><div class="r" id="gmanage" style="padding:0 12px 8px"></div>
+  <div id="grid"></div><div class="mu" id="gst" style="padding:6px 12px"></div>
+</div>
+<div id="dlg"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
